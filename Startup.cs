@@ -29,6 +29,19 @@ namespace WebAppAPI
         {
             services.AddDbContext<ProjectContext>(opt => opt.UseInMemoryDatabase("CarList"));
             services.AddControllers();
+
+            //PAPAJ
+            services.AddCors(options =>
+            {
+                options.AddPolicy("myPolicy",
+                    builder => {
+                        builder.
+               AllowAnyOrigin().
+               AllowAnyHeader().
+               AllowAnyMethod();
+                    });
+            });
+            //PAPAJ
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +51,10 @@ namespace WebAppAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //PAPAJ
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            //PAPAJ
 
             app.UseHttpsRedirection();
 

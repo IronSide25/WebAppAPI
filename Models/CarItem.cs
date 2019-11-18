@@ -24,7 +24,7 @@ namespace WebAppAPI.Models
         public int EnginePower { get; set; }
         [StringLength(50)]
         public string Color { get; set; }
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
         public float NetPrice { get; set; }
         [StringLength(5000)]
         public string Description { get; set; }
@@ -33,7 +33,7 @@ namespace WebAppAPI.Models
 /*
   {
   "vin": "123asd",
-  "brand":0,
+  "brandid":1,
   "model":"Cayenne",
   "productionyear":1994,
   "mileage": 12500,
