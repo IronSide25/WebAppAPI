@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAppAPI.Models;
+using WebAppAPI.TaxStrategies;
 
 namespace WebAppAPI.Controllers
 {
@@ -39,6 +40,54 @@ namespace WebAppAPI.Controllers
             }
 
             return countryItem;
+        }
+
+        // GET: api/CountryItems/5/bruttoprice
+        [HttpGet("{id}/{price}/{vin}")]
+        public async Task<ActionResult<float>> GetCountryItemNettoPrice(int id, float price, string vin)
+        {
+            var countryItem = await _context.CountryItems.FindAsync(id);
+            var carItem = await _context.CarItems.FindAsync(vin);
+
+            if (countryItem == null || carItem == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                switch(countryItem.Name)
+                {
+                    case "Great Britain":
+                        {
+                            ITax tax = new GreatBritainTax();
+                            return tax.CalculateNettoPrice(price, carItem);
+                        }
+                    case "Poland":
+                        {
+                            ITax tax = new PolandTax();
+                            return tax.CalculateNettoPrice(price, carItem);
+                        }
+                    case "Germany":
+                        {
+                            ITax tax = new GermanyTax();
+                            return tax.CalculateNettoPrice(price, carItem);
+                        }
+                    case "Spain":
+                        {
+                            ITax tax = new SpainTax();
+                            return tax.CalculateNettoPrice(price, carItem);
+                        }
+                    case "Denmark":
+                        {
+                            ITax tax = new DenmarkTax();
+                            return tax.CalculateNettoPrice(price, carItem);
+                        }
+                    default:
+                        {
+                            return NotFound();
+                        }
+                }
+            }
         }
 
         // PUT: api/CountryItems/5
