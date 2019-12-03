@@ -25,6 +25,7 @@ namespace WebAppAPI.Models
         [StringLength(50)]
         public string Color { get; set; }
         public string Photo { get; set; }
+        [Required(ErrorMessage = "NetPrice type is required")]
         public float NetPrice { get; set; }
         [StringLength(5000)]
         public string Description { get; set; }

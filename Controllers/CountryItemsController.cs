@@ -89,7 +89,7 @@ namespace WebAppAPI.Controllers
                 }
             }
         }
-
+        /*
         // PUT: api/CountryItems/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -120,8 +120,8 @@ namespace WebAppAPI.Controllers
             }
 
             return NoContent();
-        }
-
+        }*/
+        /*
         // POST: api/CountryItems
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -132,8 +132,8 @@ namespace WebAppAPI.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCountryItem", new { id = countryItem.Id }, countryItem);
-        }
-
+        }*/
+        /*
         // DELETE: api/CountryItems/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<CountryItem>> DeleteCountryItem(int id)
@@ -148,7 +148,7 @@ namespace WebAppAPI.Controllers
             await _context.SaveChangesAsync();
 
             return countryItem;
-        }
+        }*/
 
         private bool CountryItemExists(int id)
         {

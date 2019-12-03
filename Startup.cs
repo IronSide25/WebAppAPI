@@ -42,6 +42,9 @@ namespace WebAppAPI
                     });
             });
             //PAPAJ
+
+            //services.AddDbContext<ProjectContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CustomerDb")));
+            //services.AddSingleton<Microsoft.AspNetCore.Http.IHttpContextAccessor, Microsoft.AspNetCore.Http.HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +69,8 @@ namespace WebAppAPI
             {
                 endpoints.MapControllers();
             });
+
+            //SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
