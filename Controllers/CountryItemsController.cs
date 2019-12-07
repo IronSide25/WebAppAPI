@@ -42,12 +42,13 @@ namespace WebAppAPI.Controllers
             return countryItem;
         }
 
-        // GET: api/CountryItems/5/bruttoprice
-        [HttpGet("{id}/{price}/{vin}")]
-        public async Task<ActionResult<float>> GetCountryItemNettoPrice(int id, float price, string vin)
+        // GET: api/CountryItems/bruttoprice
+        [HttpGet("{id}/{vin}")]
+        public async Task<ActionResult<float>> GetCountryItemNettoPrice(int id,  string vin)
         {
             var countryItem = await _context.CountryItems.FindAsync(id);
             var carItem = await _context.CarItems.FindAsync(vin);
+            float price = carItem.NetPrice;
 
             if (countryItem == null || carItem == null)
             {

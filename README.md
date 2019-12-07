@@ -1,4 +1,4 @@
-# WebAppAPI
+﻿# WebAppAPI
 
 FOR TESTING
 run as WebAppAPI
@@ -72,3 +72,11 @@ example json
 
 DELETE 
 https://localhost:5001/api/CountryItems/index 	index is a key
+
+
+
+
+GET CAR PRICE WITH TAX INCLUDED
+https://localhost:5001/api/CountryItems/countryId/VIN
+np
+https://localhost:5001/api/CountryItems/1/123asd
