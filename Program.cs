@@ -25,6 +25,7 @@ namespace WebAppAPI
                 try
                 {
                     SeedData.Initialize(services);
+                    SeedData.SeedRoles(services);
                 }
                 catch (Exception ex)
                 {

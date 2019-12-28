@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WebAppAPI20191226093851" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\DATA\\Programming\\DotNET\\WebAppAPI\\obj\\Release\\netcoreapp3\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="WebAppAPI.Models.ProjectContext" description="" value="Data Source=tcp:webappapi20191226093851dbserver.database.windows.net,1433;Initial Catalog=WebAppAPI20191226093851_db;User Id=IronSide@webappapi20191226093851dbserver;Password=Waginosceptyk98" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\DATA\\Programming\\DotNET\\WebAppAPI\\obj\\Release\\netcoreapp3\.0\\PubTmp\\EFSQLScripts\\WebAppAPI\.Models\.ProjectContext\.sql$" />
+  </parameter>
+</parameters>

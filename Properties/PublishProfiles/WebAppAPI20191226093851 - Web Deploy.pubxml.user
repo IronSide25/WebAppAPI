@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALwdMyqYecUyfxZ25RqfgAQAAAAACAAAAAAAQZgAAAAEAACAAAABYAQsgQ6dfzjPl9+jHHA2mgQwY0Fcy4aX0PgmHidP+5gAAAAAOgAAAAAIAACAAAACJX8ESNkbaKflECpiJMVPbvMPrIBoHUteu0k6xwEScLIAAAAAaqw05K9jt0LCWa4rGX+Kg2/bvFhocAf3qn1Jd6PQF4dAuAS0O/mvflGHnkwbZswr834IQD1M3+fe739q9jvEfRZ4TiEzJvDaGj28ARy066MumrkiC4+HLSOVp788nuhnaZuQLQaSj7gkwVzdKbKd4sYQWZpdGnSdP7qoO/SyG2UAAAACE60kcc3yjlQKKdiLU2pJf03VLPKKqKDNuERGaZ2wWdaFR5qnYTbaXrfX17Btme7FJDfyvhZlcxLpQdo4vnlJg</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:webappapi20191226093851dbserver.database.windows.net,1433%3bInitial Catalog=WebAppAPI20191226093851_db%3bUser Id=IronSide%40webappapi20191226093851dbserver%3bPassword=Waginosceptyk98</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="WebAppAPI.Models.ProjectContext">
+      <Value>Data Source=tcp:webappapi20191226093851dbserver.database.windows.net,1433%3bInitial Catalog=WebAppAPI20191226093851_db%3bUser Id=IronSide%40webappapi20191226093851dbserver%3bPassword=Waginosceptyk98</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

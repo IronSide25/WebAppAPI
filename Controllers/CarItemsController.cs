@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ namespace WebAppAPI.Controllers
         // PUT: api/CarItems/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCarItem(string id, CarItem carItem)
         {
@@ -84,6 +86,7 @@ namespace WebAppAPI.Controllers
         // POST: api/CarItems
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<CarItem>> PostCarItem(CarItem carItem)
         {
@@ -108,6 +111,7 @@ namespace WebAppAPI.Controllers
         }
 
         // DELETE: api/CarItems/5
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<CarItem>> DeleteCarItem(string id)
         {
