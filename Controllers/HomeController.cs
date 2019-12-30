@@ -20,7 +20,6 @@ namespace WebAppAPI.Controllers
         }
 
 
-        [Microsoft.AspNetCore.Cors.EnableCors("allowPolicy")]
         [Route("isAuthenticated")]
         public IActionResult IsAuthenticated()
         {

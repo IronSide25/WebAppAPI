@@ -32,24 +32,17 @@ namespace WebAppAPI
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            //services.AddDbContext<ProjectContext>(opt => opt.UseInMemoryDatabase("CarList"));
-            services.AddDbContext<ProjectContext>(opt =>
-            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<IdentityDbContext>(opt => opt.UseInMemoryDatabase("Test"));
+        {          
+            services.AddDbContext<ProjectContext>(opt =>                                        //services.AddDbContext<ProjectContext>(opt => opt.UseInMemoryDatabase("CarList"));
+            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));          //services.AddDbContext<IdentityDbContext>(opt => opt.UseInMemoryDatabase("Test"));
+            
             services.AddControllers();
-
             services.AddMvc(option => option.EnableEndpointRouting = false);
-            services.AddCors(options =>
+            services.AddCors(corsOptions =>
             {
-                options.AddPolicy("allowPolicy",
-                    builder => {
-                        builder.
-               //AllowAnyOrigin().
-               WithOrigins("http://localhost:4200").
-               AllowAnyHeader().
-               AllowAnyMethod();
-                    });
+                corsOptions.AddPolicy("allowPolicy", 
+                    configurePolicy => configurePolicy.AllowAnyHeader().AllowAnyMethod().
+                    WithOrigins("http://localhost:4200").AllowCredentials());
             });
 
             services.AddIdentity<IdentityUser, IdentityRole>()
@@ -125,7 +118,7 @@ namespace WebAppAPI
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors("allowPolicy");
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();//app.UseAuthorization();
 
