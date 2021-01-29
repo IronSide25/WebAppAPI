@@ -1,8 +1,9 @@
-﻿# WebAppAPI
+# WebAppAPI
+Simple REST API with Google and Microsoft Account authentication. It was a part of an university project. Data model is very simple, because the main part of this application was external provider authetication.
 
-FOR TESTING
-run as WebAppAPI
-u can use Postman or web for GET endpoints
+# Testing endpoints
+Run as WebAppAPI (not ISS Express)
+You can use Postman or web for GET endpoints
 
 
 //----CARS----//	------------------------------------------------------------------------------------------------------------------------------------------------
@@ -28,14 +29,12 @@ example json
   "photo": null,
   "description":"very niiice car, buyit pls"
 }
-also musisz mieæ coœ w BrandItems ¿eby wgl postowaæ auto
 
 PUT
 https://localhost:5001/api/CarItems/vin + CarItem	vin is a key
 
 DELETE 
 https://localhost:5001/api/CarItems/vin 	vin is a key
-
 
 //----BRANDS----//	------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -54,7 +53,6 @@ example json
 DELETE 
 https://localhost:5001/api/BrandItems/index 	index is a key
 
-
 //----COUNTRIES----//	-------------------------------------------------------------------------------------------------------------------------------------------------
 
 GET all
@@ -72,9 +70,6 @@ example json
 
 DELETE 
 https://localhost:5001/api/CountryItems/index 	index is a key
-
-
-
 
 GET CAR PRICE WITH TAX INCLUDED
 https://localhost:5001/api/CountryItems/countryId/VIN
